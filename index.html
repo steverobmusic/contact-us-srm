@@ -1,7 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Your email client should open automatically.</p>
+    </div>
+
     <script>
         window.onload = function() {
             var subject = "ticket#" + generateRandomNumberString(6); // Generates a subject with "ticket#" followed by six random numbers
@@ -30,9 +68,5 @@
             return result;
         }
     </script>
-</head>
-<body>
-    <h1>Contact Us</h1>
-    <p>If you'd like to get in touch with us, your email client should open automatically.</p>
 </body>
 </html>
