@@ -1,0 +1,28 @@
+document.getElementById("emailLink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default action of opening the email client
+
+    var subject = "ticket#" + generateRandomNumberString(6); // Generates a subject with "ticket#" followed by six random numbers
+    var body = "Thanks for reaching out! Please format your email as the following:\n\n";
+    body += "Preferred name/username:\n";
+    body += "Contact email:\n";
+    body += "Contact number:\n";
+    body += "Reason for your email:";
+
+    var primaryEmail = "stevetheweave@steverobmusic.com";
+    var supportEmail = "steverobmusicltd@gmail.com"; // Change this to your support email address
+
+    var mailtoLink = "mailto:" + primaryEmail + "?cc=" + supportEmail + "&subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+    // Open the default email client with the pre-filled email
+    window.location.href = mailtoLink;
+});
+
+function generateRandomNumberString(length) {
+    var result = '';
+    var characters = '0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
