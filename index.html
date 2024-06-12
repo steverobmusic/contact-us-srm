@@ -2,17 +2,8 @@
 <html>
 <head>
     <title>Contact Us</title>
-</head>
-<body>
-    <h1>Contact Us</h1>
-    <p>If you'd like to get in touch with us, please click on the email link below:</p>
-
-    <a href="mailto:stevetheweave@steverobmusic.com" id="emailLink">stevetheweave@steverobmusic.com</a>
-
     <script>
-        document.getElementById("emailLink").addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent the default action of opening the email client
-
+        window.onload = function() {
             var subject = "ticket#" + generateRandomNumberString(6); // Generates a subject with "ticket#" followed by six random numbers
             var body = "Thanks for reaching out! Please format your email as the following:\n\n";
             body += "Preferred name/username:\n";
@@ -27,7 +18,7 @@
 
             // Open the default email client with the pre-filled email
             window.location.href = mailtoLink;
-        });
+        };
 
         function generateRandomNumberString(length) {
             var result = '';
@@ -39,5 +30,9 @@
             return result;
         }
     </script>
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>If you'd like to get in touch with us, your email client should open automatically.</p>
 </body>
 </html>
